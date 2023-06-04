@@ -1,0 +1,186 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# ### Recursive functions
+# A function that called itself is known as a Recursive Function.
+# 
+
+# #### with recursive
+
+# In[3]:
+
+
+def factorial(n):
+    if n==0:
+        result=1
+    else:
+        result=n*factorial(n-1)
+    return result
+
+
+# In[4]:
+
+
+print("Factorial of 4 is :",factorial(4))
+
+
+# In[6]:
+
+
+print(factorial(5))
+
+
+# #### Anonymous Or Lambda Function
+
+# In[1]:
+
+
+suareIt=lambda n:n*n
+
+
+# In[2]:
+
+
+print("suare of 4 is :",suareIt(4))
+
+
+# In[4]:
+
+
+print("for10",suareIt(10))
+
+
+# In[5]:
+
+
+suareIt(20)
+
+
+# In[8]:
+
+
+sum_it=lambda a,b:a+b
+
+
+# In[9]:
+
+
+sum_it(30,20)
+
+
+# In[10]:
+
+
+sum_it(400,555)
+
+
+# In[11]:
+
+
+multip=lambda a,b:a*b
+
+
+# In[12]:
+
+
+multip(45,5)
+
+
+# filter(),map(),reduce()
+
+# In[16]:
+
+
+def iseven(x):     #without lambda
+    if x%2==0:
+        return True
+    else:
+        return False
+  
+
+
+# In[17]:
+
+
+l=[0,5,10,15,20,25,30]
+l1=list(filter(iseven,l))
+print(l1)
+
+
+# In[21]:
+
+
+l=[1,2,3,4,5,6,7,8,9,10]
+l1=list(filter(lambda x:x%2==0,l))  #with lambda
+print(l1)
+
+
+# In[24]:
+
+
+A=[10,15,20,25,30,40,45,50]
+B=list(filter(lambda i:i%2!=0,A))   #Odd number
+print(B)
+
+
+# *map()*
+
+# In[42]:
+
+
+def doubleIt(x):
+    return 2*x
+
+
+# In[45]:
+
+
+l=[1,2,3,4,5]      #without lAMBDA
+l1=list(map(doubleIt,l))
+print(l1)
+
+
+# In[46]:
+
+
+A=[1,2,3,4,5]
+B=list(map(lambda x:2*x,A))    #With LAMBDA
+print(B)
+
+
+# In[47]:
+
+
+l1=[1,2,3,4]
+l2=[2,3,4,5]
+l3=list(map(lambda x,y:x*y,l1,l2))
+print(l3)
+
+
+# reduce()
+
+# In[52]:
+
+
+from functools import *
+
+l=[10,20,30,40,50]
+result=reduce(lambda x,y:x+y,l)
+print(result)
+
+
+# In[53]:
+
+
+l=[20,45,60,70,67,70]
+result=reduce(lambda x,y:x+y,l)
+print(result)
+
+
+# In[57]:
+
+
+l=[4,5,6,7,8]
+result=reduce(lambda x,y:x*y,l)
+print(result)
+
